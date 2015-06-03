@@ -1,7 +1,7 @@
-import ElemWrappedArray from './fast-array';
+import FastArray from './fast-array';
 
-export default ElemWrappedArray.extend({
-  elemCtor: ElemWrappedArray,
+export default FastArray.extend({
+  elemCtor: FastArray,
 
   rawDataAt(idx) {
     return this.getEmberArray().objectAt(idx).toArray();
