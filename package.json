@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-fast-table",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.1",
+  "description": "Speed up table display by wrapping up array elements into objects to prevent ember from tearing down existing views.",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -11,11 +11,11 @@
     "build": "ember build",
     "test": "ember test"
   },
-  "repository": "",
+  "repository": "https://github.com/genexliu/ember-cli-fast-table.git",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "genexliu",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.2",
