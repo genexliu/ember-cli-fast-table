@@ -33,7 +33,8 @@
     "ember-disable-prototype-extensions": "^1.0.0"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "fast-table"
   ],
   "dependencies": {
     "ember-cli-babel": "^4.0.0"
