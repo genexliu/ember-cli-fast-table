@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-fast-table",
   "version": "0.0.1",
-  "description": "Speed up table rendering by wrapping up array elements into objects to prevent ember from tearing down existing views.",
+  "description": "Speed up table rendering by wrapping up array elements into objects to prevent Ember from tearing down existing views.",
   "directories": {
     "doc": "doc",
     "test": "tests"

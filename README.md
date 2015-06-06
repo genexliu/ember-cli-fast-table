@@ -1,5 +1,5 @@
 # ember-cli-fast-table
-Speed up table display by wrapping up array elements into objects to prevent ember from tearing down existing views.
+Speed up table rendering by wrapping up array elements into objects to prevent Ember from tearing down existing views.
 
 ## todo:
 Add comment and usage.
