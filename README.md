@@ -71,5 +71,6 @@ export default Ember.Component.extend({
 });
 ```
 
-fast-table and fast-array extend ```Ember.MutableArray``` and implement ``objectAt(idx)``` and ```replace(idx, amt, objects)``` with other KVO-compliant methods that Ember provides (```this.set()```, ```this.get()```, etc), so you can use the interface that ```Ember.MutableArray``` defines, and all your observers, computed properties and templates get updated.
+## Under the Hood
+fast-table and fast-array extend ```Ember.MutableArray``` and implement ```objectAt(idx)``` and ```replace(idx, amt, objects)``` with other KVO-compliant methods that Ember provides (```this.set()```, ```this.get()```, etc). Thus you can use the interface that ```Ember.MutableArray``` defines on fast-table and fast-array, and all your observers, computed properties and templates get updated.
 
