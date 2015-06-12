@@ -3,6 +3,11 @@ Speed up table re-rendering by wrapping up array elements into objects to preven
 
 The new Glimmer rendering engine on Ember 1.13 fixes this performance killer. If you are not on 1.13 yet, I strongly recommend you to upgrade, but if you are somewhat stuck on Ember 1.12, this addon can be your friend.
 
+## Installation
+```
+ember install ember-cli-fast-table
+```
+
 ## Usage
 Let's say that you have the following template and computed property for a large table tableData that changes when someChangingAttr gets updated:
 ```html
