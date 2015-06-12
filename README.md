@@ -4,7 +4,7 @@ Speed up table re-rendering by wrapping up array elements into objects to preven
 The new Glimmer rendering engine on Ember 1.13 fixes this performance killer. If you are not on 1.13 yet, I strongly recommend you to upgrade, but if you are somewhat stuck on Ember 1.12, this addon can be your friend.
 
 ## Usage
-Let's say that you have the following template and computed property for a large table tabelData that changes when someChangingAttr gets updated:
+Let's say that you have the following template and computed property for a large table tableData that changes when someChangingAttr gets updated:
 ```html
 <table>
   {{#each row in tableData}}
@@ -41,7 +41,7 @@ You can rewrite your template and computed property with fast-table:
   {{#each row in tableData}}
   <tr>
     {{#each cell in row}}
-    <td>{{cell}}</td>
+    <td>{{cell.data}}</td>  {{! use cell.data instead }}
     {{/each}}
   </tr>
   {{/each}}
@@ -70,4 +70,6 @@ export default Ember.Component.extend({
 
 });
 ```
+
+fast-table and fast-array extend ```Ember.MutableArray``` and implement ``objectAt(idx)``` and ```replace(idx, amt, objects)``` with other KVO-compliant methods that Ember provides (```this.set()```, ```this.get()```, etc), so you can use the interface that ```Ember.MutableArray``` defines, and all your observers, computed properties and templates get updated.
 

@@ -80,7 +80,7 @@ export default Ember.Object.extend(Ember.MutableArray, {
       _array.replace(new_len, delta);
     }
 
-    this.length = new_len;
+    this.set('length', new_len);
 
     // calling enumerableContentDidChange() is required by doc
     this.enumerableContentDidChange();
