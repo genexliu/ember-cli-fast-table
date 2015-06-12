@@ -9,8 +9,6 @@ export default Ember.Object.extend(Ember.MutableArray, {
   init() {
     this._super(...arguments);
     this._array = Ember.A([]);
-    // By https://github.com/emberjs/ember.js/blob/v1.12.0/packages/ember-runtime/lib/mixins/array.js#L93
-    // this.length should be a number, so we cannot use a computed property here :(
     this.length = 0;
   },
 

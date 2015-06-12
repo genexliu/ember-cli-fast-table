@@ -3,6 +3,56 @@ Speed up table re-rendering by wrapping up array elements into objects to preven
 
 The new Glimmer rendering engine on Ember 1.13 will fix this performance killer, but if you are on Ember 1.12, this addon can be your friend.
 
-## todo:
-Add comment and usage.
+## Usage:
+Let's say that you have the following computed property and template for a large table:
+```Javascript
+import Ember from 'ember';
+export default Ember.Component.extend({
+  tableData: function(){
+    var ret;
+    // some computation here...
+    return ret;
+  }.property('someChangingAttr')
+});
+```
+
+```
+<table>
+  {{#each row in tableData}}
+  <tr>
+    {{#each cell in row}}
+    <td>{{cell}}</td>
+    {{/each}}
+  </tr>
+  {{/each}}
+</table>
+```
+
+You can rewrite your computed property and template with fast-table:
+```Javascript
+import Ember from 'ember';
+import FastTable from '../../utils/fast-table';
+export default Ember.Component.extend({
+  init: function(){
+    this._super();
+    this._tableData = FastTable.create();
+  },
+  tableData: function(){
+    var tabelData = this.get('_tableData');
+    return tableData;
+  }.property('someChangingAttr')
+});
+```
+
+```
+<table>
+  {{#each row in tableData}}
+  <tr>
+    {{#each cell in row}}
+    <td>{{cell.data}}</td>  {{! use cell.data instead }}
+    {{/each}}
+  </tr>
+  {{/each}}
+</table>
+```
 
