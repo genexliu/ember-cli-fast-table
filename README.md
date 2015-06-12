@@ -9,7 +9,7 @@ ember install ember-cli-fast-table
 ```
 
 ## Usage
-Let's say that you have the following template and computed property for a large table tableData that changes when someChangingAttr gets updated:
+Let's say that you have the following template and computed property for a large table ```tableData``` that changes when ```someChangingAttr``` gets updated:
 ```html
 <table>
   {{#each row in tableData}}
