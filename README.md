@@ -24,7 +24,9 @@ export default Ember.Component.extend({
 
   tableData: function(){
     var tableData = [],
-        i = 0;
+        i = 0,
+        num_rows = 10,
+        new_row = [1,2,3,4,5];
     for (; i < num_rows; ++i) {
       tableData[i] = new_row;
     }
@@ -50,7 +52,7 @@ You can rewrite your template and computed property with fast-table:
 
 ```Javascript
 import Ember from 'ember';
-import FastTable from '../../utils/fast-table';
+import FastTable from 'ember-cli-fast-table/utils/fast-table';
 
 export default Ember.Component.extend({
 
@@ -61,9 +63,11 @@ export default Ember.Component.extend({
 
   tableData: function(){
     var tableData = this.get('_tableData'),
-        i = 0;
+        i = 0,
+        num_rows = 10,
+        new_row = [1,2,3,4,5];
     for (; i < num_rows; ++i) {
-      tableData.objectAt(i).replace(0, tableData.objectAt(i).get('length'), new_row);
+      tableData.replace(i, 1, [new_row]);
     }
     return tableData;
   }.property('someChangingAttr')
