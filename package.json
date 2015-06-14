@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-fast-table",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Speed up table re-rendering by wrapping up array elements into objects to prevent Ember from tearing down and re-creating existing views.",
   "directories": {
     "doc": "doc",
