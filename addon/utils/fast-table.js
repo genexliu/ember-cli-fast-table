@@ -9,7 +9,7 @@ export default FastArray.extend({
 
   swapAt(idx, elem) {
     var arr = this.getEmberArray().objectAt(idx);
-    arr.replace(0, arr.length, elem);
+    arr.replace(0, arr.get('length'), elem);
   },
 
   toArray() {
